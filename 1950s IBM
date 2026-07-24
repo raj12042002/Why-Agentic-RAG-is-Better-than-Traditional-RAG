@@ -1,0 +1,265 @@
+Programming language coding assessments in job interviews did **not start on a single date**. They evolved over several decades as the software industry matured.
+
+Here's the timeline.
+
+| Year             | Event                                                                                                                     | Importance                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **1950s–1960s**  | Early programmers at IBM, Bell Labs, and government labs were interviewed mainly on mathematics and programming concepts. | No standardized coding tests.                     |
+| **1970s**        | Companies began asking candidates to write code on paper or whiteboards.                                                  | Manual coding became common.                      |
+| **1980s**        | Large software companies (IBM, Microsoft, Oracle, DEC) used programming questions in interviews.                          | Coding interviews became more structured.         |
+| **1988–1995**    | Microsoft popularized algorithm- and data-structure-focused interviews.                                                   | This strongly influenced the software industry.   |
+| **Late 1990s**   | Internet companies (Amazon, Yahoo, Google later) adopted similar coding interviews.                                       | Algorithms became standard.                       |
+| **2000s**        | Online coding platforms started appearing.                                                                                | Remote coding tests became possible.              |
+| **2008**         | HackerRank founded (initially InterviewStreet).                                                                           | Companies could automate coding assessments.      |
+| **2012**         | LeetCode became popular.                                                                                                  | Interview preparation became standardized.        |
+| **2015–Present** | HackerRank, Codility, CodeSignal, HackerEarth, Mettl, etc., became widely used by companies.                              | Most large companies now use online coding tests. |
+
+---
+
+# Microsoft History
+
+Microsoft has played a major role in shaping modern coding interviews.
+
+### 1980s
+
+Microsoft asked candidates:
+
+* C programming
+* Operating Systems
+* Algorithms
+* Data Structures
+
+Most coding was done:
+
+* On paper
+* Whiteboard
+
+No computer.
+
+---
+
+### 1990s
+
+Microsoft became famous for asking:
+
+* Linked Lists
+* Trees
+* Dynamic Programming
+* Sorting
+* Searching
+
+Books like **"Cracking the Coding Interview"** later documented this style.
+
+---
+
+### Today (2026)
+
+Microsoft interview process typically includes:
+
+* Online Assessment (OA)
+* Data Structures & Algorithms
+* Coding rounds
+* System Design (experienced candidates)
+* Behavioral interview
+
+Languages allowed often include:
+
+* C++
+* Java
+* Python
+* C#
+* JavaScript
+* Go (depending on the platform)
+
+---
+
+# TCS History
+
+### Before 2005
+
+TCS recruitment mainly focused on:
+
+* Aptitude
+* English
+* Basic programming knowledge
+
+Very limited coding.
+
+---
+
+### 2006–2014
+
+TCS gradually introduced:
+
+* Basic C
+* C++
+* Java questions
+
+Coding requirements were still relatively light.
+
+---
+
+### Around 2015
+
+With the launch of **TCS CodeVita**, coding became much more important.
+
+Candidates were expected to solve programming problems.
+
+---
+
+### Around 2018
+
+TCS National Qualifier Test (NQT) expanded online coding assessments.
+
+Candidates solved coding problems in languages like:
+
+* C
+* C++
+* Java
+* Python
+
+---
+
+### Today (2026)
+
+TCS assessments commonly include:
+
+* Aptitude
+* Quantitative reasoning
+* Verbal ability
+* Coding problems
+* Basic CS fundamentals (for some roles)
+
+Programming languages generally supported:
+
+* C
+* C++
+* Java
+* Python
+
+---
+
+# Evolution of Coding Interviews
+
+```text
+1950
+│
+├── Mathematics + Logic
+│
+1960
+│
+├── Basic Programming Questions
+│
+1970
+│
+├── Paper Coding
+│
+1980
+│
+├── Whiteboard Coding
+│
+1990
+│
+├── Microsoft Algorithm Interviews
+│
+2000
+│
+├── Online Coding Begins
+│
+2008
+│
+├── HackerRank
+│
+2012
+│
+├── LeetCode Popular
+│
+2015
+│
+├── TCS CodeVita
+│
+2018
+│
+├── TCS NQT Coding
+│
+2020
+│
+├── AI-assisted Interview Platforms
+│
+2025–2026
+│
+└── AI + DSA + System Design + LLM/GenAI (for AI roles)
+```
+
+## What companies expect today
+
+For **software engineering roles**:
+
+* Programming language proficiency (Python, Java, C++, C#, etc.)
+* Data Structures & Algorithms
+* Problem-solving
+* Object-Oriented Programming
+* SQL (many roles)
+* System Design (mid/senior levels)
+
+For **AI/GenAI roles**, companies may additionally assess:
+
+* Python
+* Machine Learning basics
+* LLM APIs
+* RAG
+* Vector Databases
+* AI Agents
+* Prompt Engineering
+* MCP and tool calling
+* Model evaluation and debugging
+
+
+
+So, while programming has been part of technical interviews since the **1970s–1980s**, the **modern online coding assessment** 
+format used by companies like TCS and Microsoft became widespread during the **late 2000s and 2010s**.
+
+
+
+
+
+# Current high-demand skills (2026)
+
+If your goal is a modern data center or cloud infrastructure career in India, prioritize:
+
+## Linux administration
+Networking fundamentals (TCP/IP, DNS, VLANs)
+Virtualization (VMware/KVM)
+Cloud (AWS/Azure/GCP)
+Docker
+Kubernetes
+Terraform & Ansible
+Monitoring (Prometheus/Grafana)
+Storage concepts (SAN/NAS/Object Storage)
+AI infrastructure basics (GPU clusters, CUDA awareness, Kubernetes for AI workloads)
+
+These skills are commonly requested for roles such as Data Center Engineer, System Administrator, Cloud Engineer, DevOps Engineer, Site Reliability Engineer (SRE), and AI Infrastructure Engineer.
+
+
+
+
+Data Center Evolution Timeline
+Year	Technology	Inventor/Company	Country	Importance
+1951	UNIVAC I	Remington Rand	🇺🇸 USA	First commercial computer
+1964	IBM System/360	IBM	🇺🇸 USA	Standardized enterprise computing
+1970	Mainframe Data Centers	IBM	🇺🇸 USA	Centralized computing
+1983	TCP/IP Internet	DARPA	🇺🇸 USA	Modern networking foundation
+1989	World Wide Web	Tim Berners-Lee	🇬🇧 UK	Internet growth increased data center demand
+1994	Commercial Web Hosting	Various ISPs	🌍 Global	Hosting websites professionally
+1998	VMware Virtualization	VMware	🇺🇸 USA	Multiple VMs on one server
+2002	Blade Servers	HP, IBM, Dell	🌍 Global	High-density server deployment
+2006	Amazon Web Services (AWS)	Amazon	🇺🇸 USA	Public cloud revolution
+2008	Containers (LXC)	Linux Community	🌍 Global	Lightweight virtualization
+2013	Docker	Docker Inc.	🇺🇸 USA	Standardized containers
+2014	Kubernetes	Google	🇺🇸 USA	Container orchestration
+2016	Software Defined Data Center (SDDC)	VMware	🇺🇸 USA	Software-managed infrastructure
+2017	NVMe Storage	Multiple vendors	🌍 Global	High-speed SSD storage
+2020	Edge Data Centers	AWS, Azure, Cloudflare	🌍 Global	Computing closer to users
+2022	AI GPU Clusters	NVIDIA	🇺🇸 USA	Large-scale AI training
+2023	Liquid Cooling	NVIDIA, Supermicro	🌍 Global	Cooling for AI servers
+2024–2026	AI Factories	NVIDIA, OpenAI, Microsoft, Google	🌍 Global	Data centers optimized for AI
