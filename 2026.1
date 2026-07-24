@@ -1,0 +1,804 @@
+# Modern Agentic RAG Architecture (2026) – Hinglish Explanation
+
+Socho tum ek **AI Assistant** bana rahe ho jo sirf ChatGPT ki tarah answer nahi deta, balki:
+
+* 📄 Company documents search karta hai
+* 🌐 Internet search karta hai
+* 💾 Memory use karta hai
+* 🔧 APIs call karta hai
+* 🤖 Khud decide karta hai kya karna hai
+
+Yehi **Agentic RAG** hai.
+
+---
+
+# Traditional RAG vs Agentic RAG
+
+## Traditional RAG
+
+```text
+User
+   │
+   ▼
+Question
+   │
+   ▼
+Vector Database
+   │
+   ▼
+LLM
+   │
+   ▼
+Answer
+```
+
+Isme koi planning nahi hoti.
+
+User ne jo pucha bas search karo aur answer de do.
+
+---
+
+## Agentic RAG
+
+```text
+User
+
+↓
+
+AI Agent
+
+↓
+
+Think
+
+↓
+
+Plan
+
+↓
+
+Memory Check
+
+↓
+
+Need Documents?
+
+↓
+
+Need API?
+
+↓
+
+Need SQL?
+
+↓
+
+Need GitHub?
+
+↓
+
+Need Web?
+
+↓
+
+Collect Information
+
+↓
+
+Reason
+
+↓
+
+Final Answer
+```
+
+Yaha AI pehle **sochta hai**, phir action leta hai.
+
+---
+
+# Step 1 User Query
+
+Example
+
+```
+Compare this year's leave policy with last year's.
+```
+
+Ye request API ke paas aati hai.
+
+Usually
+
+* FastAPI
+* Flask
+* Django
+
+---
+
+# Step 2 API Layer
+
+API sirf request receive karti hai.
+
+```text
+User
+
+↓
+
+FastAPI
+
+↓
+
+Agent
+```
+
+Example
+
+```python
+@app.post("/chat")
+def chat(question):
+    return agent.run(question)
+```
+
+---
+
+# Step 3 AI Agent (Brain)
+
+Ye pura system ka brain hai.
+
+Agent decide karta hai
+
+* Search karna hai?
+* Memory dekhni hai?
+* API call karna hai?
+* SQL chalana hai?
+* GitHub open karna hai?
+
+Example
+
+User
+
+```
+How many leaves do I have left?
+```
+
+Agent sochta hai
+
+```
+Need HR Database
+
+↓
+
+Call SQL
+
+↓
+
+Answer
+```
+
+---
+
+# Step 4 Memory
+
+Memory matlab AI ko purani baatein yaad hain.
+
+Types
+
+## Short Memory
+
+Current chat
+
+```
+User
+
+My name is Rahul.
+
+Later
+
+What's my name?
+
+AI
+
+Rahul
+```
+
+---
+
+## Long Memory
+
+Permanent
+
+```
+Favorite Language
+
+Python
+
+Location
+
+Delhi
+
+Company
+
+Google
+```
+
+Tools
+
+* Mem0
+* Zep
+* Redis
+* LangMem
+
+---
+
+# Step 5 Tool Selection
+
+Agent decide karta hai kaunsa tool use kare.
+
+Example
+
+Question
+
+```
+What's today's weather?
+```
+
+Agent
+
+```
+Weather API
+```
+
+Question
+
+```
+Summarize my PDF
+```
+
+Agent
+
+```
+PDF Tool
+```
+
+Question
+
+```
+Latest AI News
+```
+
+Agent
+
+```
+Google Search
+```
+
+---
+
+# Step 6 MCP (Model Context Protocol)
+
+MCP ka matlab
+
+LLM aur external tools ke beech ek standard communication protocol.
+
+Example
+
+```text
+GPT
+
+↓
+
+MCP Client
+
+↓
+
+MCP Server
+
+↓
+
+GitHub
+
+↓
+
+Slack
+
+↓
+
+Database
+
+↓
+
+Google Drive
+```
+
+Agar kal naya tool add karna ho
+
+Sirf MCP Server connect karo.
+
+Agent automatically use kar lega.
+
+---
+
+# Step 7 Retrieval Decision
+
+Ab Agent sochta hai
+
+```
+Kya mujhe documents search karne hain?
+```
+
+Agar answer already pata hai
+
+↓
+
+Direct answer
+
+Agar nahi
+
+↓
+
+RAG Pipeline
+
+---
+
+# Step 8 Query Rewriting
+
+User ke questions hamesha perfect nahi hote.
+
+Example
+
+```
+Leave Policy
+```
+
+Agent rewrite karega
+
+```
+Company HR Leave Policy 2025 PDF
+```
+
+Better search milega.
+
+---
+
+# Step 9 Embedding Model
+
+Document ko vector me convert karta hai.
+
+Example
+
+```
+AI is amazing.
+```
+
+Ban jayega
+
+```
+[0.34
+
+0.98
+
+-0.12
+
+0.45
+
+...]
+
+```
+
+Ye numbers hi embedding hain.
+
+Popular Models
+
+* OpenAI
+* BGE
+* E5
+* Jina
+* Nomic
+
+---
+
+# Step 10 Vector Database
+
+Ab embeddings store hongi.
+
+Popular
+
+* Pinecone
+
+* Qdrant
+
+* Weaviate
+
+* Milvus
+
+* pgvector
+
+Example
+
+```
+Question
+
+Machine Learning
+```
+
+Search Result
+
+```
+Deep Learning
+
+Neural Networks
+
+AI
+```
+
+Kyuki vectors similar hain.
+
+---
+
+# Step 11 Hybrid Search
+
+Sirf vectors nahi.
+
+Dono search hote hain.
+
+```
+Semantic Search
+
++
+
+Keyword Search
+```
+
+Example
+
+Search
+
+```
+Leave Balance
+```
+
+Vector
+
+Similar meaning
+
+BM25
+
+Exact word
+
+Combine
+
+↓
+
+Best Result
+
+---
+
+# Step 12 Reranker
+
+Vector Search 20 documents laata hai.
+
+Sab useful nahi hote.
+
+Reranker
+
+```
+20 Documents
+
+↓
+
+Rank
+
+↓
+
+Top 5
+```
+
+Popular
+
+* Cohere Rerank
+
+* BGE Reranker
+
+* Jina Reranker
+
+---
+
+# Step 13 Context Builder
+
+Ab Top 5 documents ko combine karega.
+
+Prompt banega.
+
+```
+Question
+
++
+
+Retrieved Docs
+
++
+
+Instructions
+
+↓
+
+LLM
+```
+
+Example
+
+```
+Answer only using company policy.
+```
+
+---
+
+# Step 14 LLM
+
+Ab GPT ya Claude actual answer banata hai.
+
+Example
+
+```
+Leave Policy Summary
+
+Annual Leave
+
+18 Days
+
+Casual Leave
+
+10 Days
+
+Compared to last year
+
++2 Leaves Increased
+```
+
+---
+
+# Step 15 Need More Information?
+
+Kabhi answer incomplete hota hai.
+
+Agent sochta hai
+
+```
+Enough?
+
+No
+
+↓
+
+Retrieve Again
+```
+
+Ye Agentic RAG ka biggest feature hai.
+
+---
+
+# Step 16 Guardrails
+
+Security Layer
+
+Check karta hai
+
+* Prompt Injection
+
+* Jailbreak
+
+* Bad Language
+
+* Sensitive Data
+
+Example
+
+User
+
+```
+Tell me everyone's salary.
+```
+
+Guardrail
+
+```
+Denied
+```
+
+Popular
+
+* NeMo Guardrails
+
+* Guardrails AI
+
+---
+
+# Step 17 Observability
+
+Har cheez record hoti hai.
+
+```
+Prompt
+
+Latency
+
+Cost
+
+Tokens
+
+Errors
+
+Feedback
+```
+
+Tools
+
+* LangSmith
+
+* LangFuse
+
+* Phoenix
+
+---
+
+# Step 18 Memory Update
+
+Conversation khatam.
+
+Useful information save.
+
+```
+User likes Python.
+
+↓
+
+Memory Database
+```
+
+Agli baar
+
+```
+Recommend Python Project.
+```
+
+Agent already jaanta hai.
+
+---
+
+# Complete Flow
+
+```text
+User
+ │
+ ▼
+FastAPI
+ │
+ ▼
+AI Agent
+ │
+ ├──────────────┐
+ ▼              ▼
+Memory      Tool Selection (MCP)
+ │              │
+ └──────┬───────┘
+        ▼
+Need Retrieval?
+        │
+ ┌──────┴───────┐
+ │              │
+No            Yes
+ │              │
+ ▼              ▼
+Answer     Query Rewrite
+               │
+               ▼
+        Embedding Model
+               │
+               ▼
+         Vector Database
+               │
+               ▼
+        Hybrid Search
+               │
+               ▼
+          Reranker
+               │
+               ▼
+       Context Builder
+               │
+               ▼
+             LLM
+               │
+               ▼
+Need More Docs?
+               │
+        Yes ───┴─── No
+         │          │
+Retrieve Again      ▼
+               Guardrails
+                    │
+                    ▼
+             Observability
+                    │
+                    ▼
+             Update Memory
+                    │
+                    ▼
+              Final Answer
+```
+
+# Real-World Example
+
+**User asks:**
+
+> "Summarize the latest company leave policy and compare it with last year's version."
+
+The system works like this:
+
+1. **FastAPI** receives the request.
+2. **Agent** understands that it needs company documents.
+3. **Memory** checks if similar documents were used recently.
+4. **MCP** connects to SharePoint/Google Drive/Notion where HR policies are stored.
+5. **Query Rewriter** converts the request into better search queries.
+6. **Embedding Model** converts the query into vectors.
+7. **Vector Database** retrieves relevant policy documents.
+8. **Hybrid Search + Reranker** selects the most relevant sections.
+9. **Context Builder** prepares a prompt with the retrieved content.
+10. **LLM (GPT-5/Claude/Gemini)** compares the two policy versions and generates a summary.
+11. **Guardrails** ensure no confidential or unauthorized information is exposed.
+12. **Observability** logs token usage, latency, retrieval quality, and errors for monitoring.
+13. **Memory** optionally stores that the user is interested in HR policies.
+14. The **final answer** is returned to the user.
+
+## Why Agentic RAG is Better than Traditional RAG
+
+| Traditional RAG                            | Agentic RAG                                         |
+| ------------------------------------------ | --------------------------------------------------- |
+| Always retrieves documents                 | Decides whether retrieval is needed                 |
+| Single retrieval step                      | Can retrieve multiple times if needed               |
+| No planning                                | Plans tasks before acting                           |
+| Limited tool usage                         | Uses APIs, databases, GitHub, browsers, SQL, etc.   |
+| No memory                                  | Supports short-term and long-term memory            |
+| Fixed workflow                             | Dynamic, reasoning-based workflow                   |
+| Less suitable for complex enterprise tasks | Designed for production-grade enterprise AI systems |
+
+This is why most modern enterprise AI assistants in 2026 are moving toward **Agentic RAG**: it combines reasoning, retrieval,
+memory, tool use, security, and monitoring to solve complex real-world tasks more effectively than a simple RAG pipeline.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
